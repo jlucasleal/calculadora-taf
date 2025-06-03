@@ -1,3 +1,44 @@
 body {
     background-color: brown;
 }
+
+
+p {
+    font-size: 2rem;
+}
+
+#container {
+    background-color: grey;
+}
+
+#project-top {
+    display: flex;
+    justify-content: center;
+    background-color: bisque;
+}
+
+#project-title {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+
+}
+
+#square {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem;
+
+    background-color: blue;
+}
+
+.input-wrapper {
+    background-color: lightgrey;
+}
+
+.input-label,
+.select-label{
+    background-color: lightblue;
+}
