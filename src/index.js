@@ -25,4 +25,9 @@ document.getElementById("send-btn").addEventListener("click", () => {
     firstPerson.getData();
     firstPerson.getAgeRange();
     firstPerson.getGen();
+    firstPerson.getSeg();
+    firstPerson.getCorridaScore();
+    firstPerson.getFlexaoScore();
+    firstPerson.getAbdScore();
+    firstPerson.getBarraScore();
 });
