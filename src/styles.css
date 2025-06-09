@@ -1,20 +1,47 @@
-body {
-    background-color: brown;
+:root{
+    color:white;
+    font-size: 1.4rem;
+    font-family: Arial, sans-serif;
+    --primary-color: rgb(9, 68, 9);
+    --primaty-size: 1.2rem;
 }
 
+
+body {
+    background-color: darkgreen;
+}
+
+button, input, select {
+    color: white;
+    background-color: black;
+}
 
 p {
     font-size: 2rem;
 }
 
 #container {
-    background-color: grey;
+    background-color: black;
 }
 
 #project-top {
     display: flex;
     justify-content: center;
-    background-color: bisque;
+    background-color: black;
+}
+
+#barra-wrapper {
+    display: flex;
+}
+
+#question-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-left: 2rem;
+}
+
+#question {
+    width: 1rem;
 }
 
 #project-title {
@@ -25,20 +52,74 @@ p {
 
 }
 
+select,
+input,
+label,
+button {
+    font-size: var(--primaty-size);
+    
+}
+
 #square {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
     padding: 0.5rem;
-
-    background-color: blue;
+    background-color: var(--primary-color);
 }
 
 .input-wrapper {
-    background-color: lightgrey;
+    background-color: var(--primary-color);
 }
 
 .input-label,
 .select-label{
+    background-color: var(--primary-color);
+}
+
+#result-box {
+    height: fit-content;
+    background-color: white;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+thead{
+    width: 100%;
+}
+
+#header th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#first-line td{
+    font-size: 1rem;
+    padding: 0.3rem;
+}
+
+th, td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 0.2rem;
+
+}
+
+.tr:hover {
     background-color: lightblue;
+}
+
+table * {
+    color: black;
+}
+
+thead tr th {
+  text-wrap: nowrap;
+}
+
+.trash-icon {
+    width: 2rem;
 }

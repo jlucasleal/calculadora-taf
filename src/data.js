@@ -1,7 +1,7 @@
 export class MakeData {
-    constructor(name, grad, age, corrida, barra, abdominal, flexao) {
-        this.name = name;
+    constructor(grad, name, age, corrida, barra, abdominal, flexao) {
         this.grad = grad;
+        this.name = name;
         this.age = age;
         this.corrida = corrida;
         this.barra = barra;
@@ -15,19 +15,26 @@ export class MakeData {
         this.flexaoScore = 0;
         this.abdScore = 0;
         this.barraScore = 0;
+
+        this.corridaIndex = 0;
+        this.flexaoIndex = 0;
+        this.abdIndex = 0;
+        this.barraIndex = 0;
+        this.allScores = [];
+        this.finalIndex = 0;
     }
     
     makeData() {
-    this.name = document.querySelector('#name').value;
     this.grad = document.querySelector('#grad').value;
+    this.name = document.querySelector('#name').value;
     this.age = document.querySelector('#age').value;
     this.corrida = document.querySelector('#corrida').value;
     this.barra = document.querySelector('#barra').value;
     this.abdominal = document.querySelector('#abdominal').value;
     this.flexao = document.querySelector('#flexao').value;
     this.data = {
-        name: this.name,
         grad: this.grad,
+        name: this.name,
         age: this.age,
         corrida: this.corrida,
         barra: this.barra,
@@ -38,6 +45,123 @@ export class MakeData {
 
     getData() {
         console.log(this.data);
+    }
+
+    getIndex(){
+    this.allScores = [
+        this.corridaScore,
+        this.flexaoScore,
+        this.abdScore,
+        this.barraScore
+    ];
+
+    if(this.corridaScore == 0){
+        this.corridaIndex = "Inapto";
+    } else if(this.corridaScore == 1){
+        this.corridaIndex = "I";
+    } else if(this.corridaScore == 2){
+        this.corridaIndex = "R";
+    } else if(this.corridaScore == 3){
+        this.corridaIndex = "B";
+    } else if(this.corridaScore == 4){
+        this.corridaIndex = "MB";
+    } else if(this.corridaScore == 5){
+        this.corridaIndex = "E";
+    } else if(this.corridaScore == 6){
+        this.corridaIndex = "Apto";
+    } else if(this.corridaScore == 7){
+        this.corridaIndex = "Não Realiza";
+    }
+
+            if(this.flexaoScore == 0){
+        this.flexaoIndex = "Inapto";
+    } else if(this.flexaoScore == 1){
+        this.flexaoIndex = "I";
+    } else if(this.flexaoScore == 2){
+        this.flexaoIndex = "R";
+    } else if(this.flexaoScore == 3){
+        this.flexaoIndex = "B";
+    } else if(this.flexaoScore == 4){
+        this.flexaoIndex = "MB";
+    } else if(this.flexaoScore == 5){
+        this.flexaoIndex = "E";
+    } else if(this.flexaoScore == 6){
+        this.flexaoIndex = "Apto";
+    } else if(this.flexaoScore == 7){
+        this.flexaoIndex = "Não Realiza";
+    }
+
+            if(this.abdScore == 0){
+        this.abdIndex = "Inapto";
+    } else if(this.abdScore == 1){
+        this.abdIndex = "I";
+    } else if(this.abdScore == 2){
+        this.abdIndex = "R";
+    } else if(this.abdScore == 3){
+        this.abdIndex = "B";
+    } else if(this.abdScore == 4){
+        this.abdIndex = "MB";
+    } else if(this.abdScore == 5){
+        this.abdIndex = "E";
+    } else if(this.abdScore == 6){
+        this.abdIndex = "Apto";
+    } else if(this.abdScore == 7){
+        this.abdIndex = "Não Realiza";
+    }
+
+            if(this.barraScore == 0){
+        this.barraIndex = "Inapto";
+    } else if(this.barraScore == 1){
+        this.barraIndex = "I";
+    } else if(this.barraScore == 2){
+        this.barraIndex = "R";
+    } else if(this.barraScore == 3){
+        this.barraIndex = "B";
+    } else if(this.barraScore == 4){
+        this.barraIndex = "MB";
+    } else if(this.barraScore == 5){
+        this.barraIndex = "E";
+    } else if(this.barraScore == 6){
+        this.barraIndex = "Apto";
+    } else if(this.barraScore == 7){
+        this.barraIndex = "Não Realiza";
+    }
+
+    if(this.allScores.includes(0)){
+        this.finalIndex = "Inapto";
+    } else if(this.allScores.includes(1)){
+        this.finalIndex = "I";
+    } else if(this.allScores.includes(2)){
+        this.finalIndex = "R";
+    } else if(this.allScores.includes(3)){
+        this.finalIndex = "B";
+    } else if(this.allScores.includes(4)){
+        this.finalIndex = "MB";
+    } else if(this.allScores.includes(5)){
+        this.finalIndex = "E";
+    } else if(this.allScores.includes(6)){
+        this.finalIndex = "Apto";
+    } else if(this.allScores.includes(7)){
+        this.finalIndex = "Não Realiza";
+    }
+    }
+
+        getArray() {
+        const array = [
+            `${this.grad}`,
+            `${this.name}`,
+            `${this.age}`,
+            `${this.corrida}`,
+            `${this.corridaIndex}`,
+            `${this.flexao}`,
+            `${this.flexaoIndex}`,
+            `${this.abdominal}`,
+            `${this.abdIndex}`,
+            `${this.barra}`,
+            `${this.barraIndex}`,
+            `${this.finalIndex}`           
+        ]
+        return array;
     }
 
     getAgeRange () {
@@ -108,14 +232,6 @@ export class MakeData {
             this.segType = 2;
         }
     }
-
-
-    //
-    //
-    //
-    // SCORE DE CORRIDA
-    //
-    //
 
     getCorridaScore() {
         let corridaScore = 0;
@@ -1150,7 +1266,7 @@ export class MakeData {
         return flexaoScore;
     }
 
-    getAbdScore () {
+    getAbdScore() {
         let abdScore = 0;
         let ageRange = this.ageRange
         let abd = Number(this.abdominal);
@@ -1654,7 +1770,7 @@ export class MakeData {
         return abdScore;
     }
 
-    getBarraScore () {
+    getBarraScore() {
         let barraScore = 0;
         let ageRange = this.ageRange
         let barra = Number(this.barra);

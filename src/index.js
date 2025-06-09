@@ -3,6 +3,7 @@ import { createSquare } from "./square.js";
 import { makeSquareContent } from "./content.js";
 import { makeSendBtn } from "./send.js";
 import { MakeData } from "./data.js";
+import { createResult, createRow, headerArr } from "./result.js";
 
 const container = document.querySelector('#container');
 
@@ -18,7 +19,14 @@ projectTop.appendChild(projectTitle);
 createSquare();
 makeSquareContent();
 makeSendBtn();
+createResult();
 
+createRow(headerArr, "first-line");
+const firstLine = document.getElementById('first-line');
+const firstTrash = document.getElementById('trash-first-line');
+firstLine.removeChild(firstTrash);
+
+let index = 0;
 document.getElementById("send-btn").addEventListener("click", () => {
     const firstPerson = new MakeData();
     firstPerson.makeData();
@@ -30,4 +38,14 @@ document.getElementById("send-btn").addEventListener("click", () => {
     firstPerson.getFlexaoScore();
     firstPerson.getAbdScore();
     firstPerson.getBarraScore();
+    firstPerson.getIndex();
+
+
+    createRow(firstPerson.getArray(), `row-${index}`);
+    index ++;
 });
+
+const question = document.querySelector("#question");
+question.addEventListener("change", () => {
+
+})

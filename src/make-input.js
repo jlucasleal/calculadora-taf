@@ -29,6 +29,28 @@ export class MakeInput {
     square.appendChild(wrapper);
     }
 
+    makeInputQuestion(questionContainer){
+    const input = document.createElement('input');
+    input.type = this.type;
+    input.id = this.id;
+    input.placeholder = this.placeholder;
+
+    const label = document.createElement('label');
+    label.textContent = `${this.label}`;
+    label.setAttribute("for", `${this.name}`);
+    label.classList.add("input-label");
+
+    const wrapper = document.createElement('div');
+    wrapper.appendChild(label);
+    wrapper.appendChild(input);
+    wrapper.classList.add("input-wrapper");
+    wrapper.setAttribute("id", `${this.id}-wrapper`);
+
+
+    const square = document.querySelector("#square");
+    questionContainer.appendChild(wrapper);
+    }
+
     addDataList(...options){
         const input = document.querySelector(`#${this.id}`);
         const dataList = document.createElement('datalist');
