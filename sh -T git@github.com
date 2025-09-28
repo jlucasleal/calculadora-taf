@@ -1,0 +1,53 @@
+[33mcommit 8dff35493dc0b93416e8bf701ea4df9d626816b7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: jorge-luke <jorgestl123@gmail.com>
+Date:   Sat Sep 27 20:45:18 2025 -0400
+
+    Almost finish functionality
+
+[33mcommit 9985356b5696e470b95a31e0c76dedc61692e528[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: jorge-luke <jorgestl123@gmail.com>
+Date:   Mon Jun 9 16:37:12 2025 -0400
+
+    try gh-pages
+
+[33mcommit 569f18c374690113f1cd73d6e533af961a2230a9[m
+Author: jorge-luke <jorgestl123@gmail.com>
+Date:   Mon Jun 9 16:27:29 2025 -0400
+
+    Finish making project useable
+
+[33mcommit ddbb835b467f4e28edb1fab5b665ddf17ec619d9[m
+Author: jorge-luke <jorgestl123@gmail.com>
+Date:   Sun Jun 8 11:48:56 2025 -0400
+
+    finish taf calculation logic
+
+[33mcommit a030a264dae985ec37aec8e8839fee42b205986c[m
+Author: Jorge-luke <jorgestl123@gmail.com>
+Date:   Thu Jun 5 15:09:04 2025 -0400
+
+    Finish last commit fix
+
+[33mcommit 4a8de3b0ab5b8c9598888da12285455605540690[m
+Author: Jorge-luke <jorgestl123@gmail.com>
+Date:   Thu Jun 5 15:08:29 2025 -0400
+
+    Finish last commit
+
+[33mcommit 36f5b59401f3baf312b2be2c37cdc43ff22a5f7d[m
+Author: Jorge-luke <jorgestl123@gmail.com>
+Date:   Thu Jun 5 15:06:52 2025 -0400
+
+    Finish corridaScore and start flexaoScore
+
+[33mcommit 032d59d63ca9686cb33a0d3ae88fc39be028c911[m
+Author: Jorge-luke <jorgestl123@gmail.com>
+Date:   Tue Jun 3 15:47:48 2025 -0400
+
+    Add files via upload
+
+[33mcommit df7f96fd6656b490eaed9aff1f586fa8e802df6e[m
+Author: Jorge-luke <jorgestl123@gmail.com>
+Date:   Thu May 22 11:47:04 2025 -0400
+
+    Initial commit
