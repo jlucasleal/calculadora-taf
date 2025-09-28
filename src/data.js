@@ -1,3 +1,5 @@
+import { sust } from "./content";
+
 export class MakeData {
     constructor(grad, name, age, corrida, barra, abdominal, flexao) {
         this.grad = grad;
@@ -29,7 +31,11 @@ export class MakeData {
     this.name = document.querySelector('#name').value;
     this.age = document.querySelector('#age').value;
     this.corrida = document.querySelector('#corrida').value;
+    if (!sust){
     this.barra = document.querySelector('#barra').value;
+    } else {
+    this.barra = document.querySelector('#barra').value + " seg";
+    }
     this.abdominal = document.querySelector('#abdominal').value;
     this.flexao = document.querySelector('#flexao').value;
     this.data = {
@@ -204,7 +210,14 @@ export class MakeData {
         } else if(age >=62 && age <=65){
             ageRange = 12;
             console.log(`Idade entre 62 e 65. Range de idade numero: ${ageRange}`);
-        } else {
+        } else if(sust && age >= 40 && age <= 45){
+            ageRange = 13;
+            console.log('Idade entre 40 e 45 com sustentação (LEMB Feminino). Range de idade número: 13');
+        } else if(sust && age >= 46 && age <= 49){
+            console.log('Idade entre 46 e 49 com sustentação (LEMB Feminino). Range de idade número: 14');
+            ageRange = 14;
+        }
+        else {
             console.log("Idade fora do range");
         }
         this.ageRange = ageRange;
@@ -1642,6 +1655,7 @@ export class MakeData {
         }
     // ABD N LEMB FEM
     } else if(this.genType == 2 && this.segType == 2){
+
         if (ageRange == 1){
             if(abd <= 30){
                 abdScore = 1;
@@ -1866,6 +1880,19 @@ export class MakeData {
         } 
         // BARRA LEMB FEM
         } else if (this.genType == 2 && this.segType == 1){
+        if(ageRange == 13){
+            if(barra < 45){
+                barraScore = 0;
+            } else {
+                barraScore = 6;
+            }
+        }if(ageRange == 14){
+            if(barra < 30){
+                barraScore = 0;
+            } else {
+                barraScore = 6;
+            }
+        }
         if(ageRange == 1){
             if(barra < 1){
                 barraScore = 1;

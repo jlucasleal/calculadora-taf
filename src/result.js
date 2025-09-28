@@ -1,4 +1,5 @@
 import  trashIcon  from "./img/bin.png";
+import Checked from "./img/checked.png";
 
 export function createResult () {
     const container = document.querySelector('#container');
@@ -13,16 +14,47 @@ export function createResult () {
     const header = document.createElement('thead');
     header.id = "header";
 
-    const headerRow = document.createElement('tr');
-    header.appendChild(headerRow);
-    const headerData = document.createElement('th');
-    headerRow.appendChild(headerData);
 
-    headerData.textContent = "TAF CIA C2 2025"
-    headerData.setAttribute("colspan", 12);
+    const docTitleRow = document.createElement('tr');
+    header.appendChild(docTitleRow);
+    const docTitleHeader = document.createElement('th');
+    docTitleRow.appendChild(docTitleHeader);
+    const docTitle = document.createElement('input');
+    docTitle.id = "doc-title";
+    docTitle.type = "text";
+    docTitle.maxLength = "6df0";
+
+    docTitle.placeholder = "TAF Nº / SU / ANO";
+    docTitleHeader.setAttribute("colspan", 12);
+    docTitleHeader.appendChild(docTitle);
+    const sendTitleBtn = document.createElement('img');
+    sendTitleBtn.src = Checked;
+    sendTitleBtn.id = "send-title-btn";
+    docTitleHeader.appendChild(sendTitleBtn);
+
+    sendTitleBtn.addEventListener('click', () => {
+
+    if(!document.querySelector('#header-row')){
+    const headerRow = document.createElement('tr');
+    headerRow.id = "header-row";
+    header.appendChild(headerRow);
+    const headerTitle = document.createElement('th');
+    headerTitle.id = "header-title";
+    headerRow.appendChild(headerTitle);
+    }
+
+    let headerTitleNew = document.getElementById('header-title');
+    headerTitleNew.textContent = docTitle.value;
+    headerTitleNew.setAttribute("colspan", 12);
+        })
 
     table.appendChild(header);
     resultBox.appendChild(table);
+
+
+
+
+    
 }
 
 export const headerArr = [
@@ -33,11 +65,11 @@ export const headerArr = [
     "ÍNDICE",
     "FLEXÃO",
     "ÍNDICE",
-    "ABDOMINAIS",
+    "ABDOMINAL",
     "ÍNDICE",
-    "BARRAS",
+    "BARRA",
     "ÍNDICE",
-    "ÍNDICE GERAL"
+    "MENÇÃO GERAL"
 ]
 
 export function createRow (arr, id){
@@ -64,7 +96,6 @@ export function createRow (arr, id){
     td.textContent = element;
     row.appendChild(td);
     row.appendChild(trash);
-    
     });
 
   

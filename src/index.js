@@ -4,6 +4,7 @@ import { makeSquareContent } from "./content.js";
 import { makeSendBtn } from "./send.js";
 import { MakeData } from "./data.js";
 import { createResult, createRow, headerArr } from "./result.js";
+import { credits } from "./credits.js";
 
 const container = document.querySelector('#container');
 
@@ -20,6 +21,7 @@ createSquare();
 makeSquareContent();
 makeSendBtn();
 createResult();
+credits();
 
 createRow(headerArr, "first-line");
 const firstLine = document.getElementById('first-line');
@@ -44,8 +46,3 @@ document.getElementById("send-btn").addEventListener("click", () => {
     createRow(firstPerson.getArray(), `row-${index}`);
     index ++;
 });
-
-const question = document.querySelector("#question");
-question.addEventListener("change", () => {
-
-})
