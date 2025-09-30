@@ -60,7 +60,27 @@ export function credits(){
 
     const creditFive = document.createElement('div');
     creditFive.id = 'credit-five';
-    creditFive.textContent = "Em desenvolvimento por 3º Sgt Jorge Lucas, Cia C2, 9º B Com GE.";
+
+    const creditFiveText = document.createElement('span');
+    creditFiveText.textContent = " Em desenvolvimento.";
+    creditFive.appendChild(creditFiveText);
+
+    const creditFivePlus = document.createElement('button');
+    creditFivePlus.textContent = "+";
+    creditFivePlus.id = 'credit-five-plus';
+    creditFive.appendChild(creditFivePlus);
+    creditFivePlus.addEventListener('click', () => {
+        if(!document.querySelector('#credit-five-plus-added')){
+            const creditFivePlusAdded = document.createElement('div');
+            creditFivePlusAdded.id = "credit-five-plus-added";
+            creditFivePlusAdded.textContent = "por 3º Sgt Jorge Lucas - Cia C2 - 9º B Com GE. Qualquer erro, favor enviar email (jorgelucas.leal@eb.mil.br)";
+            creditFive.appendChild(creditFivePlusAdded);
+            creditFivePlus.textContent = "-"
+        } else {
+            creditFive.removeChild(document.querySelector('#credit-five-plus-added'));
+            creditFivePlus.textContent = "+"
+        }
+    })
     
 
     const creditsArray = [creditOne, creditTwo, creditThree, creditFour, creditFive];

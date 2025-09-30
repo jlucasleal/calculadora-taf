@@ -21,7 +21,7 @@ p {
 }
 
 #container {
-    background-color: black;
+    background-color: green;
 }
 
 #project-top {
@@ -78,10 +78,12 @@ button {
 }
 
 #send-title-btn {
-    width: 1.5rem;
-    margin: 0.4rem 0 0 0.4rem;
     position: relative;
-    top: 0.3rem;
+    top: 0.2rem;
+    width: 1.5rem;
+    height: 1.8rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
 }
 
 #doc-title {
@@ -116,7 +118,21 @@ button {
 
 #result-box {
     height: fit-content;
+    width: fit-content;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#title-input-container {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+}
+
+#result-table {
+    width: 100%;
+    table-layout: fixed;
 }
 
 table {
@@ -134,11 +150,14 @@ thead{
 }
 
 #first-line td{
-    font-size: 1rem;
+    font-size: 1.7vh;
     padding: 0.3rem;
 }
 
 th, td {
+     white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
     text-align: center;
     border: 1px solid black;
     padding: 0.2rem;
@@ -161,6 +180,21 @@ thead tr th {
     width: 2rem;
 }
 
+
+#pdf-btn {
+    color: white;
+}
+
+/* 
+////////////////////////////
+
+CONFIGURATION FOR PRINTING
+
+////////////////////////////
+*/
+
+
+
 #credits {
     /* background-color: greenyellow; */
     right: 2rem;
@@ -174,12 +208,15 @@ thead tr th {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    width: fit-content;
+    align-self: flex-end;
+    padding-right: 2rem;
 }
 
 #credits-title {
-    text-align: right;
     color: black;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+    align-self: baseline;
 }
 
 .credit img {
@@ -189,4 +226,46 @@ thead tr th {
 #credit-five {
     color: black;
     font-size: 0.6rem;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#credit-five span {
+    justify-self: flex-end;
+    padding-left: 1rem;
+}
+
+#credit-five-plus {
+    width: fit-content;
+    justify-self: end;
+}
+
+#credit-five-plus-added {
+    grid-column: 1 / 3;
+}
+
+
+@media print {
+
+#first-line td{
+    padding: 0.1rem;
+    font-size: 0.8vh;
+    padding: 0.1rem;
+    margin: 0.1rem;
+}
+
+    td {
+        font-size: 0.5rem;
+    }
+
+    #title-input-container,
+    #square,
+    #project-top,
+    #credits-container,
+    #pdf-btn,
+    img {
+        display: none;
+    }
 }

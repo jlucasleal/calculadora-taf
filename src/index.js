@@ -45,4 +45,5 @@ document.getElementById("send-btn").addEventListener("click", () => {
 
     createRow(firstPerson.getArray(), `row-${index}`);
     index ++;
+    document.querySelector('#name').focus();
 });

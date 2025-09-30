@@ -13,27 +13,23 @@ export function createResult () {
     
     const header = document.createElement('thead');
     header.id = "header";
+    
 
-
-    const docTitleRow = document.createElement('tr');
-    header.appendChild(docTitleRow);
-    const docTitleHeader = document.createElement('th');
-    docTitleRow.appendChild(docTitleHeader);
-    const docTitle = document.createElement('input');
-    docTitle.id = "doc-title";
-    docTitle.type = "text";
-    docTitle.maxLength = "6df0";
-
-    docTitle.placeholder = "TAF Nº / SU / ANO";
-    docTitleHeader.setAttribute("colspan", 12);
-    docTitleHeader.appendChild(docTitle);
+    const titleInputContainer = document.createElement('div');
+    titleInputContainer.id = "title-input-container"
+    resultBox.appendChild(titleInputContainer);
+    const titleInput = document.createElement('input');
+    titleInput.id = "doc-title";
+    titleInput.type = "text";
+    titleInput.maxLength = "45";
+    titleInput.placeholder = "TAF Nº / SU / ANO";
     const sendTitleBtn = document.createElement('img');
     sendTitleBtn.src = Checked;
     sendTitleBtn.id = "send-title-btn";
-    docTitleHeader.appendChild(sendTitleBtn);
+    titleInputContainer.appendChild(titleInput);
+    titleInputContainer.appendChild(sendTitleBtn);
 
-    sendTitleBtn.addEventListener('click', () => {
-
+    function sendTitle() {
     if(!document.querySelector('#header-row')){
     const headerRow = document.createElement('tr');
     headerRow.id = "header-row";
@@ -44,9 +40,20 @@ export function createResult () {
     }
 
     let headerTitleNew = document.getElementById('header-title');
-    headerTitleNew.textContent = docTitle.value;
+    headerTitleNew.textContent = titleInput.value;
     headerTitleNew.setAttribute("colspan", 12);
-        })
+        }
+
+    sendTitleBtn.addEventListener('click', ()=>{
+        sendTitle();
+        titleInput.focus()
+    });
+
+    titleInput.addEventListener('keyup', (event) => {
+        if(event.key === 'Enter'){
+            sendTitle();
+        }
+    })
 
     table.appendChild(header);
     resultBox.appendChild(table);
@@ -58,7 +65,7 @@ export function createResult () {
 }
 
 export const headerArr = [
-    "POSTO/GRAD",
+    "POSTO\nGRAD",
     "NOME",
     "IDADE",
     "CORRIDA",
@@ -69,10 +76,22 @@ export const headerArr = [
     "ÍNDICE",
     "BARRA",
     "ÍNDICE",
-    "MENÇÃO GERAL"
+    `MENÇÃO\nGERAL`
 ]
 
 export function createRow (arr, id){
+
+    const pdfBtn = document.createElement('button');
+    pdfBtn.id = 'pdf-btn';
+    pdfBtn.textContent = "Imprimir";
+    pdfBtn.addEventListener('click', ()=> {
+        print();
+        // generatePdf('result-table');
+    })
+
+    if (!document.querySelector('tr')){
+        document.querySelector('#result-box').appendChild(pdfBtn);
+    }
 
     const table = document.querySelector('#result-table');
 
@@ -97,8 +116,4 @@ export function createRow (arr, id){
     row.appendChild(td);
     row.appendChild(trash);
     });
-
-  
-
-
 }

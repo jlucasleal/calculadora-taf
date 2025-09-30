@@ -2,9 +2,6 @@ import { MakeInput } from "./make-input.js";
 import { MakeSelect } from "./make-select.js";
 import Interrogation from "./img/interrogation-mark.png";
 import XBtn from "./img/x-btn.png";
-import  trashIcon  from "./img/bin.png";
-import Checked from "./img/checked.png";
-import { credits } from "./credits.js";
 
 export let sust = false;
 
@@ -53,6 +50,8 @@ export function makeSquareContent (){
     } else if(document.querySelector('#info')){
             infoWrapper.removeChild(document.querySelector('#info'));
     }} 
+
+
    
 
     const grad = new MakeSelect("Posto/ Graduação: ", "grad", "grad", "SD EV", "SD EP", "CB", "3º Sgt", "2º Sgt", "1º Sgt", "ST", "Asp OF", "2º Ten", "1º Ten", "Cap", "Maj", "Ten Cel", "Cel", "Gen Bda", "Gen Div", "Gen Ex", "Al CFC", "Al CFST", "Al CPOR", "Al NPOR", "Selecionar");
@@ -62,19 +61,50 @@ export function makeSquareContent (){
     const name = new MakeInput("Nome: ", "text", "name", "name", "");
     
     name.makeInput();
-    document.getElementById("name").value = "";
-  
-    const age = new MakeInput("idade: ", "number", "age", "age", "");
+    const nameInput = document.getElementById("name");
+    nameInput.value = "";
+    nameInput.setAttribute('maxlength', '25');
+
+    function inputLimit (input, limit){
+    input.addEventListener("input", () => {
+        let value = parseInt(input.value, 10);
+
+        if (isNaN(value)) {
+            input.value = "";
+            return;
+        }
+        
+    if (value > limit){
+            input.value = limit;
+        } else if ( value < 0){
+            input.value = 0;
+        }
+    });
+    }
+
+    const age = new MakeInput("Idade: ", "number", "age", "age", "");
     age.makeInput();
-    document.getElementById("age").value = "";
+    const ageInput = document.getElementById("age");
+    ageInput.value = "";
+    ageInput.setAttribute('min', '18');
+    ageInput.setAttribute('max', '65');
+    inputLimit(ageInput, 65);
 
     const corrida = new MakeInput("Corrida: ", "number", "corrida", "corrida", "");
     corrida.makeInput();
-    document.getElementById("corrida").value = "";
+    const corridaInput = document.getElementById("corrida");
+    corridaInput.value = "";
+    corridaInput.setAttribute('min', '0');
+    corridaInput.setAttribute('max', '4000');
+    inputLimit(corridaInput, 3250);
+    
+
 
     const barra = new MakeInput("Barras: ", "number", "barra", "barra", "");
     barra.makeInput();
     document.getElementById("barra").value = "";
+    document.getElementById("barra").setAttribute('min', '0');
+    document.getElementById("barra").setAttribute('max', '100');
     const barraWrapper = document.getElementById('barra-wrapper');
 
 
@@ -101,36 +131,29 @@ export function makeSquareContent (){
 
     infoShow.addEventListener('click', () => {
         makeInfo();
-
     });
-
-
      const verification = new MakeInput("LEMB Feminino, idade entre 40 e 49?", "checkbox", "verification", "verification", "");
     verification.makeInput();
     const verificationInput = document.querySelector('#verification');
 
-        verificationInput.addEventListener('change', () => {
-    if(verificationInput.checked){
-        sust = true;
-        
-        const segSelect = document.getElementById('seg');
-        segSelect.value = "LEMB";
-        const genSelect = document.getElementById('gen');
-        genSelect.value = "Feminino";
+    verificationInput.addEventListener('change', () => {
+        if(verificationInput.checked){
+            sust = true;
+            
+            const segSelect = document.getElementById('seg');
+            segSelect.value = "LEMB";
+            const genSelect = document.getElementById('gen');
+            genSelect.value = "Feminino";
 
-        const guide = document.createElement('div');
-        guide.id = 'guide';
-        guide.textContent = '(Sustentação em segundos)';
-        guide.className = 'input-label';
-        barraWrapper.appendChild(guide);
+            const guide = document.createElement('div');
+            guide.id = 'guide';
+            guide.textContent = '(Sustentação em segundos)';
+            guide.className = 'input-label';
+            barraWrapper.appendChild(guide);
 
-        const barraText = document.querySelector('#barra');
-        barraText.value += "seg";
-
-    } else {
-        barraWrapper.removeChild(guide);
-        sust = false;
-    }
-    });
-
+        } else {
+            barraWrapper.removeChild(guide);
+            sust = false;
+        }
+        });
 }

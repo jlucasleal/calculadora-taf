@@ -31,11 +31,13 @@ export class MakeData {
     this.name = document.querySelector('#name').value;
     this.age = document.querySelector('#age').value;
     this.corrida = document.querySelector('#corrida').value;
-    if (!sust){
+    
+    // if (!sust){
     this.barra = document.querySelector('#barra').value;
-    } else {
-    this.barra = document.querySelector('#barra').value + " seg";
-    }
+    // } else {
+    // this.barra = document.querySelector('#barra').value + " seg";
+    // }
+    
     this.abdominal = document.querySelector('#abdominal').value;
     this.flexao = document.querySelector('#flexao').value;
     this.data = {
