@@ -58,7 +58,8 @@ export function makeSquareContent (){
     grad.makeSelect();
     document.getElementById("grad").value = "Selecionar";
 
-    const name = new MakeInput("Nome: ", "text", "name", "name", "");
+    const name = new MakeInput("nome: ", "text", "name", "name", "");
+    ///change for new build and deploy
     
     name.makeInput();
     const nameInput = document.getElementById("name");
