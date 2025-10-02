@@ -22,6 +22,12 @@ p {
 
 #container {
     background-color: green;
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+    width: 90vw;;
+    min-width: 800px;
+    box-sizing: border-box;
 }
 
 #project-top {
@@ -150,8 +156,9 @@ thead{
 }
 
 #first-line td{
-    font-size: 1.7vh;
+    font-size: 1.8vh;
     padding: 0.3rem;
+    font-weight: bold;
 }
 
 th, td {
@@ -207,10 +214,9 @@ CONFIGURATION FOR PRINTING
     padding-top: 10rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     width: fit-content;
-    align-self: flex-end;
     padding-right: 2rem;
+    align-self: center;
 }
 
 #credits-title {
@@ -233,13 +239,13 @@ CONFIGURATION FOR PRINTING
 }
 
 #credit-five span {
-    justify-self: flex-end;
     padding-left: 1rem;
 }
 
 #credit-five-plus {
     width: fit-content;
-    justify-self: end;
+    margin-left: 0.5rem;
+    justify-self: start;
 }
 
 #credit-five-plus-added {

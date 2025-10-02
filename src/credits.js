@@ -4,12 +4,12 @@ import  trashIcon  from "./img/bin.png";
 import Checked from "./img/checked.png";
 
 export function credits(){
-    const resultBox = document.querySelector('#result-box');
+    const container = document.querySelector('#container');
     const credits = document.createElement('div');
 
     const creditsContainer = document.createElement('div');
     creditsContainer.id = 'credits-container';
-    resultBox.appendChild(creditsContainer);
+    container.appendChild(creditsContainer);
 
  
     credits.id = 'credits';
@@ -62,7 +62,7 @@ export function credits(){
     creditFive.id = 'credit-five';
 
     const creditFiveText = document.createElement('span');
-    creditFiveText.textContent = " Em desenvolvimento.";
+    creditFiveText.textContent = " Em desenvolvimento por 3º Sgt Jorge Lucas - Cia C2 - 9º B Com GE";
     creditFive.appendChild(creditFiveText);
 
     const creditFivePlus = document.createElement('button');
@@ -73,7 +73,7 @@ export function credits(){
         if(!document.querySelector('#credit-five-plus-added')){
             const creditFivePlusAdded = document.createElement('div');
             creditFivePlusAdded.id = "credit-five-plus-added";
-            creditFivePlusAdded.textContent = "por 3º Sgt Jorge Lucas - Cia C2 - 9º B Com GE. Qualquer erro, favor enviar email (jorgelucas.leal@eb.mil.br)";
+            creditFivePlusAdded.textContent = "Qualquer erro, favor enviar email (jorgelucas.leal@eb.mil.br)";
             creditFive.appendChild(creditFivePlusAdded);
             creditFivePlus.textContent = "-"
         } else {
