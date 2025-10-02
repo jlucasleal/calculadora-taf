@@ -13,7 +13,7 @@ body {
 
 button, input, select {
     color: white;
-    background-color: black;
+    background-color: rgb(14, 10, 10);
 }
 
 p {
