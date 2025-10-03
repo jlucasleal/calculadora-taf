@@ -52,6 +52,7 @@ export function makeSquareContent (){
     }} 
 
 
+    console.log('test');
    
 
     const grad = new MakeSelect("Posto/ Graduação: ", "grad", "grad", "SD EV", "SD EP", "CB", "3º Sgt", "2º Sgt", "1º Sgt", "ST", "Asp OF", "2º Ten", "1º Ten", "Cap", "Maj", "Ten Cel", "Cel", "Gen Bda", "Gen Div", "Gen Ex", "Al CFC", "Al CFST", "Al CPOR", "Al NPOR", "Selecionar");
