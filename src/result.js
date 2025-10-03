@@ -86,7 +86,6 @@ export function createRow (arr, id){
     pdfBtn.textContent = "Imprimir";
     pdfBtn.addEventListener('click', ()=> {
         print();
-        // generatePdf('result-table');
     })
 
     if (!document.querySelector('tr')){
@@ -116,4 +115,5 @@ export function createRow (arr, id){
     row.appendChild(td);
     row.appendChild(trash);
     });
+
 }
