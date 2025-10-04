@@ -16,6 +16,9 @@ body {
     rgb(43, 141, 43),
     green,
      var(--primary-color));
+     display: flex;
+     flex-direction: column;
+     align-items: center;
 }
 
 button, input, select {
@@ -37,10 +40,11 @@ p {
 #container {
     /* background-color: green; */
     display: flex;
+    align-items: center;
     flex: 0;
     flex-direction: column;
-    width: 90vw;
-    min-width: 500px;
+    width: 100%;
+    max-width: 1600px;
     box-sizing: border-box;
 }
 
@@ -91,15 +95,22 @@ input,
 label,
 button {
     font-size: var(--primaty-size);  
+    padding: 0.3rem;
 }
 
 #square {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.4rem;
     padding: 0.5rem;
+    justify-content: center;
     align-self: center;
     width: fit-content;
+}
+
+#square > * {
+  flex: 1 1 25px;
 }
 
 #send-title-btn {
@@ -143,28 +154,34 @@ button {
 
 #result-box {
     height: fit-content;
-    width: fit-content;
+    width: 100%;
     background-color: none;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+#table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#result-table {
+    max-width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: none;
+}
+
+th,
+tr {
+    width: 100%;
+}
 #title-input-container {
     display: flex;
     padding: 1rem;
     justify-content: center;
 }
-
-#result-table {
-    width: 100%;
-    table-layout: fixed;
-    background-color: none;
-}
-
-table {
-    border-collapse: collapse;
-}
-
 
 thead{
     width: 100%;
@@ -192,8 +209,6 @@ thead{
 
 th, td {
     white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-all;
     text-align: center;
     border: 1px solid black;
     background-color: white;
@@ -222,6 +237,7 @@ thead tr th {
     color: white;
     width: 7rem;
     align-self: center;
+    margin-top: 0.5rem;
 }
 /* 
 ////////////////////////////

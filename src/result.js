@@ -56,7 +56,12 @@ export function createResult () {
     })
 
     table.appendChild(header);
-    resultBox.appendChild(table);
+
+    const tableContainer = document.createElement('div');
+    tableContainer.id = "table-container";
+    resultBox.appendChild(tableContainer);
+
+    tableContainer.appendChild(table);
 
 
 
