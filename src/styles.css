@@ -24,6 +24,7 @@ body {
      align-items: center;
      width: 100%;
      margin: 0;
+     padding: 0;
 }
 
 button, input, select {
@@ -48,7 +49,7 @@ p {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    max-width: 1600px;
+    /* max-width: 1600px; */
     box-sizing: border-box;
 }
 
@@ -130,7 +131,6 @@ button {
     color: white;
     font-size: 0.7rem;
     height: 2rem;
-    max-width: 22rem;
     padding: 0 0.5rem 0 0.5rem;
     text-align: center;
 }
@@ -316,5 +316,20 @@ CONFIGURATION FOR PRINTING
     #pdf-btn,
     img {
         display: none;
+    }
+}
+
+/* Styles for devices with a width of 768px and up (tablets and above) */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Arranges items horizontally on tablets and above */
+        justify-content: space-between;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 600px){
+    :root {
+        font-size: 1rem;
     }
 }
