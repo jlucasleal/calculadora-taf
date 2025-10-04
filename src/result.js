@@ -23,9 +23,17 @@ export function createResult () {
     titleInput.type = "text";
     titleInput.maxLength = "45";
     titleInput.placeholder = "TAF Nº / SU / ANO";
+
+    const titleInputLabel = document.createElement('label');
+    titleInputLabel.textContent = "Título:";
+    titleInputLabel.id = "title-input-label";
+    titleInputLabel.setAttribute('for', 'doc-title');
+
+
     const sendTitleBtn = document.createElement('img');
     sendTitleBtn.src = Checked;
     sendTitleBtn.id = "send-title-btn";
+    titleInputContainer.appendChild(titleInputLabel);
     titleInputContainer.appendChild(titleInput);
     titleInputContainer.appendChild(sendTitleBtn);
 
