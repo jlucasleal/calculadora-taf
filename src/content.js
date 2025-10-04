@@ -4,6 +4,7 @@ import Interrogation from "./img/interrogation-mark.png";
 import XBtn from "./img/x-btn.png";
 
 export let sust = false;
+console.log('test');
 
 export function makeSquareContent (){
 
