@@ -10,49 +10,6 @@ export function makeSquareContent (){
 
     const square = document.querySelector('#square');
 
-    const infoWrapper = document.createElement('div');
-    infoWrapper.id = 'info-wrapper';
-    square.appendChild(infoWrapper);
-
-    function makeInfo(){
-    if(!document.querySelector('#info')){
-
- 
-
-    const info = document.createElement('div');
-    info.id = 'info';
-    infoWrapper.appendChild(info);
-
-    const xBtn = document.createElement('img');
-    xBtn.src = XBtn;
-    xBtn.id = 'x-btn';
-    xBtn.alt = "Fechar";
-    info.appendChild(xBtn);
-
-    xBtn.addEventListener('click', () => {
-        infoWrapper.removeChild(info);
-    })
-
-    const infoOne = document.createElement('p');
-    infoOne.textContent = "LEMB: Linha de Ensino Militar Bélico";
-    info.appendChild(infoOne);
-
-    const infoTwo = document.createElement('p');
-    infoTwo.textContent = "LEMS: Linha de Ensino Militar de Saúde";
-    info.appendChild(infoTwo);
-
-    const infoThree = document.createElement('p');
-    infoThree.textContent = "LEMC: Linha de Ensino Militar Complementar";
-    info.appendChild(infoThree);
-
-    const infoFour = document.createElement('p');
-    infoFour.textContent = "LEMCT: Linha de Ensino Militar de Científico-Tecnológico";
-    info.appendChild(infoFour);
-    } else if(document.querySelector('#info')){
-            infoWrapper.removeChild(document.querySelector('#info'));
-    }} 
-
-
     console.log('test');
    
 
@@ -98,23 +55,25 @@ export function makeSquareContent (){
     const corridaInput = document.getElementById("corrida");
     corridaInput.value = "";
     corridaInput.setAttribute('min', '0');
-    corridaInput.setAttribute('max', '4000');
-    inputLimit(corridaInput, 3250);
-    
-
+    corridaInput.setAttribute('max', '5000');
+    inputLimit(corridaInput, 5000);
 
     const barra = new MakeInput("Barras: ", "number", "barra", "barra", "");
     barra.makeInput();
-    document.getElementById("barra").value = "";
-    document.getElementById("barra").setAttribute('min', '0');
-    document.getElementById("barra").setAttribute('max', '100');
+    const barraInput = document.getElementById("barra");
+    barraInput.value = "";
+    corridaInput.setAttribute('min', '0');
+    corridaInput.setAttribute('max', '5000');
     const barraWrapper = document.getElementById('barra-wrapper');
+
+    inputLimit(barraInput, 5000);
 
 
 
     const abdominal = new MakeInput("Abdominal: ", "number", "abdominal", "abdominal", "");
     abdominal.makeInput();
     document.getElementById("abdominal").value = ""; 
+    
 
     const flexao = new MakeInput("Flexões: ", "number", "flexao", "flexao", "");
     flexao.makeInput();
@@ -131,6 +90,49 @@ export function makeSquareContent (){
     infoShow.id = 'info-show';
     infoShow.alt = "O que é LEMB, LEMS, LEMC e LEMCT?";
     segWrapper.appendChild(infoShow);
+
+
+    const infoWrapper = document.createElement('div');
+    infoWrapper.id = 'info-wrapper';
+    square.appendChild(infoWrapper);
+
+    function makeInfo(){
+    if(!document.querySelector('#info')){
+
+    const info = document.createElement('div');
+    info.id = 'info';
+    infoWrapper.appendChild(info);
+
+    const xBtn = document.createElement('img');
+    xBtn.src = XBtn;
+    xBtn.id = 'x-btn';
+    xBtn.alt = "Fechar";
+    info.appendChild(xBtn);
+
+    xBtn.addEventListener('click', () => {
+        infoWrapper.removeChild(info);
+    })
+
+    const infoOne = document.createElement('p');
+    infoOne.textContent = "LEMB: Linha de Ensino Militar Bélico";
+    info.appendChild(infoOne);
+
+    const infoTwo = document.createElement('p');
+    infoTwo.textContent = "LEMS: Linha de Ensino Militar de Saúde";
+    info.appendChild(infoTwo);
+
+    const infoThree = document.createElement('p');
+    infoThree.textContent = "LEMC: Linha de Ensino Militar Complementar";
+    info.appendChild(infoThree);
+
+    const infoFour = document.createElement('p');
+    infoFour.textContent = "LEMCT: Linha de Ensino Militar de Científico-Tecnológico";
+    info.appendChild(infoFour);
+    } else if(document.querySelector('#info')){
+            infoWrapper.removeChild(document.querySelector('#info'));
+    }} 
+
+
 
     infoShow.addEventListener('click', () => {
         makeInfo();

@@ -34,14 +34,7 @@ button, input, select {
     border: 1px solid white;
 }
 
-input:hover,
-select:hover {
-    background-color: var(--secondary-background-color);
-}
 
-p {
-    font-size: 2rem;
-}
 
 #container {
     /* background-color: green; */
@@ -146,14 +139,22 @@ button {
 }
 
 #info {
-    background-color: blue;
+    background-color: darkgreen;
 }
 
 #info-show {
     width: 1.5rem;
     margin-left: 0.5rem;
     cursor: pointer;
+}
 
+input:hover,
+select:hover {
+    background-color: var(--secondary-background-color);
+}
+
+p {
+    font-size: 1rem;
 }
 
 #result-box {
