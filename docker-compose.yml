@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  webpack-app:
+    container_name: webpack-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app
+    command: ["nginx", "-g", "daemon off;"]
